@@ -1,0 +1,6 @@
+select h.hacker_id, h.name  from Submissions  s join Hackers  h on s.hacker_id=h.hacker_id 
+join Challenges c on c.challenge_id=s.challenge_id
+ join  Difficulty d  on d.difficulty_level=c.difficulty_level and d.score = s.score
+group by h.name,h.hacker_id
+Having count(s.score)> 1 
+order by count(s.score) desc, h.hacker_id asc;
