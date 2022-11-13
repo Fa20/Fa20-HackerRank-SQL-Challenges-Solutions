@@ -1,0 +1,1 @@
+select round(AVG(salary))-round(AVG(replace(salary,'0','')))as mis from employees
